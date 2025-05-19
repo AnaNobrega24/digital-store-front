@@ -9,12 +9,12 @@
     --color-grafite: #474747;
     --color-cinza-claro: #cccccc;
     --color-amarelo: #F6AA1C;
+    --color-verde: #E7FF86
 }
 
 * {
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-    text-decoration: none;
 }
 
 body{
