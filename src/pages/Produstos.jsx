@@ -15,7 +15,29 @@ const Produtos = () => {
         }
     }
     console.log(filtroMarca);
-    
+
+    function verificarCategoria(categoria) {
+        if (filtroCategoria.includes(categoria)) {
+            setCategoria([...filtroCategoria.filter(cadaCategoria => cadaCategoria != categoria)]);
+        } else {
+            setCategoria([...filtroCategoria, categoria]);
+        }
+    }
+    console.log(filtroCategoria);
+
+    function verificarGenero(genero) {
+        if (filtroGenero.includes(genero)) {
+            setGenero([filtroGenero.filter(cadaGenero => cadaGenero !== genero)]);
+        } else {
+            setGenero([...filtroGenero, genero]);
+        }
+    }
+    console.log(filtroGenero);
+
+    function verificarEstado(estado) {
+        setEstado(estado);
+    }
+    console.log(filtroEstado);
 
     return (
         <div className="xl:px-[100px] xl:pt-[40px] xl:pb-[140px]">
@@ -38,35 +60,35 @@ const Produtos = () => {
                     <h6 className="mb-[10px] font-bold text-grafite">Marca</h6>
                     <div className="grid gap-[10px]">
                         <label className="flex gap-[10px] items-center">
-                            <input 
-                                className="w-[22px] h-[22px] accent-rosa" 
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
                                 type="checkbox"
                                 onChange={() => verificarMarca("adidas")}
-                                />
+                            />
                             Adidas
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input 
-                                className="w-[22px] h-[22px] accent-rosa" 
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
                                 type="checkbox"
-                                onChange={() => verificarMarca("balenciaga")} 
-                                />
+                                onChange={() => verificarMarca("balenciaga")}
+                            />
                             Balenciaga
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input 
-                                className="w-[22px] h-[22px] accent-rosa" 
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
                                 type="checkbox"
-                                onChange={() => verificarMarca("nike")} 
-                                />
+                                onChange={() => verificarMarca("nike")}
+                            />
                             Nike
                         </label>
                         <label className="flex gap-[10px] items-center">
                             <input
-                                className="w-[22px] h-[22px] accent-rosa" 
-                                type="checkbox" 
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
                                 onChange={() => verificarMarca("puma")}
-                                />
+                            />
                             Puma
                         </label>
                     </div>
@@ -74,50 +96,91 @@ const Produtos = () => {
                     <h6 className="mb-[10px] font-bold text-grafite  mt-4">Categoria</h6>
                     <div className="grid gap-[10px]">
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
+                                onChange={() => verificarCategoria("esporte e lazer")}
+                            />
                             Esporte e Lazer
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
+                                onChange={() => verificarCategoria("casual")}
+                            />
                             Casual
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
+                                onChange={() => verificarCategoria("utilitario")}
+                            />
                             Utilitario
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                            Corrido
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
+                                onChange={() => verificarCategoria("corrida")}
+                            />
+                            Corrida
                         </label>
                     </div>
 
                     <h6 className="mb-[10px] font-bold text-grafite  mt-4">Gênero</h6>
                     <div className="grid gap-[10px]">
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
+                                onChange={() => verificarCategoria("masculino")}
+                            />
                             Masculino
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                            Feminino
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
+                                onChange={() => verificarCategoria("feminino")}
+                            />
+                            feminino
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                            Corrida
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="checkbox"
+                                onChange={() => verificarCategoria("unisex")}
+                            />
+                            Unisex
                         </label>
                     </div>
 
-                    <h6 className="mb-[10px] font-bold text-grafite  mt-4">Estado</h6>
+                    <h6 className="mb-[10px] font-bold text-grafite mt-4">Estado</h6>
                     <div className="grid gap-[10px]">
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="radio" />
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="radio"
+                                value="novo"
+                                checked={filtroEstado === "novo"}
+                                onChange={() => verificarEstado("novo")}
+                            />
                             Novo
                         </label>
                         <label className="flex gap-[10px] items-center">
-                            <input className="w-[22px] h-[22px] accent-rosa" type="radio" />
-                            usado
+                            <input
+                                className="w-[22px] h-[22px] accent-rosa"
+                                type="radio"
+                                value="usado"
+                                checked={filtroEstado === "usado"}
+                                onChange={() => verificarEstado("usado")}
+                            />
+                            Usado
                         </label>
                     </div>
+
                 </div>
 
                 {/* Div de produtos */}
